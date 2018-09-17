@@ -6,7 +6,7 @@ gi.setmode(gi.BCM)
 trig=13 #setting GPIO pin 
 echo=19
 
-ismoving=False #true if movement is dected
+global ismoving=False #true if movement is dected
 
 listfordis=[] #list for store recent values of distance 
 
