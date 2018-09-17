@@ -10,8 +10,6 @@ ismoving=False #true if movement is dected
 
 listfordis=[] #list for store recent values of distance 
 
-print ("start")
-
 gi.setup(trig,gi.OUT)
 gi.setup(echo, gi.IN)
 
@@ -35,10 +33,10 @@ while True:
     distance=pulse_du*17000
     distance=round(distance, 2) #get actual distance from travle time of ultrasonic
     
-    if len(listfordis)==5:
+    if len(listfordis)==3:
         listfordis.pop(0)
         listfordis.append(distance) # add new value to list and remove old one
-        avg=sum(listfordis)/5  # get average value for compare 
+        avg=sum(listfordis)/3  # get average value for compare 
         if avg>=min(listfordis)+1 or avg<=max(listfordis)-1: 
             ismoving=True # there is a movement if min value is too small or max value is too big
         else :
