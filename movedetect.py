@@ -35,7 +35,7 @@ def detectmove (ToF):
         
         distance=pulse_du*17000
         distance=round(distance, 2) #get actual distance from travle time of ultrasonic
-        
+        print (distance)
         if len(listfordis)==3:
             listfordis.pop(0)
             listfordis.append(distance) # add new value to list and remove old one
@@ -46,6 +46,7 @@ def detectmove (ToF):
                 ismoving=False
         else :
             listfordis.append(distance) # do not calculte movement if list is not filled. 
+
         if ToF :
             if ismoving:
                 return
