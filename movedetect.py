@@ -43,13 +43,13 @@ def detectmove (ToF):
             if avg>=min(listfordis)+1 or avg<=max(listfordis)-1: 
                 ismoving=True # there is a movement if min value is too small or max value is too big
             else :
-                ismoving=False
+                ismoving=False 
+            if ToF :
+                if ismoving:
+                    return
+            else:
+                if not ismoving :
+                    return
         else :
             listfordis.append(distance) # do not calculte movement if list is not filled. 
 
-        if ToF :
-            if ismoving:
-                return
-        else:
-            if not ismoving :
-                return
