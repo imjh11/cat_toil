@@ -44,5 +44,9 @@ def detectmove (ToF):
             ismoving=False
     else :
         listfordis.append(distance) # do not calculte movement if list is not filled. 
-   
-    return ismoving
+    if ToF :
+        if ismoving:
+            return
+    else:
+        if not ismoving :
+            return
