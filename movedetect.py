@@ -6,14 +6,16 @@ gi.setmode(gi.BCM)
 trig=13 #setting GPIO pin 
 echo=19
 
-ismoving=False #true if movement is dected
 
-listfordis=[] #list for store recent values of distance 
+
+
 
 gi.setup(trig,gi.OUT)
 gi.setup(echo, gi.IN)
 
 def detectmove (ToF):
+    listfordis=[] #list for store recent values of distance 
+    ismoving=False #true if movement is dected
     while True:
         gi.output(trig, False) # make sure ultrasonic is turned off
         time.sleep(0.5)
@@ -39,14 +41,14 @@ def detectmove (ToF):
             listfordis.append(distance) # add new value to list and remove old one
             avg=sum(listfordis)/3  # get average value for compare 
             if avg>=min(listfordis)+1 or avg<=max(listfordis)-1: 
-                global ismoving=True # there is a movement if min value is too small or max value is too big
+                ismoving=True # there is a movement if min value is too small or max value is too big
             else :
-                global ismoving=False
+                ismoving=False
         else :
             listfordis.append(distance) # do not calculte movement if list is not filled. 
         if ToF :
-            if global ismoving:
+            if ismoving:
                 return
         else:
-            if not global ismoving :
+            if not ismoving :
                 return
