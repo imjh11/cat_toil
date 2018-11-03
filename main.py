@@ -1,6 +1,6 @@
 import movedetect as mvd
 import time
-
+import picamera
 from datetime import datetime
 
 
