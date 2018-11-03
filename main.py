@@ -3,8 +3,7 @@ import time
 
 from datetime import datetime
 
-now=str(datetime.now())
-now=now[0:19]
+
 with picamera.PiCamera() as camera:
     while True:
         mvd.detectmove(True) #will end when move is detected
