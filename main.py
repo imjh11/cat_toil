@@ -19,7 +19,7 @@ with picamera.PiCamera() as camera:
         camera.stop_recording() #will end when move is not detected
         endtime=datetime.now().strftime("%y-%m-%d %H-%M-%S")
         end=time.time()
-        length=end-start
+        length=int(end-start)
         if length > 120:
             logoutput=starttime + ' ' + endtime + ' ' + str(length) + ' seconds ' + 'Warning!'+ '\n' + '\n'
         else:
