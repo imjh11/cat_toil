@@ -20,10 +20,10 @@ with picamera.PiCamera() as camera:
         endtime=datetime.now().strftime("%y-%m-%d %H-%M-%S")
         end=time.time()
         length=int(end-start)
-        if length > 120:
+        if length > 120 or length < 10:
             logoutput=starttime + ' ' + endtime + ' ' + str(length) + ' seconds ' + 'Warning!'+ '\n' + '\n'
         else:
-            logoutput=starttime + ' ' + endtime + ' ' + str(length) + 'seconds' + '\n' + '\n'    
+            logoutput=starttime + ' ' + endtime + ' ' + str(length) + ' seconds' + '\n' + '\n'    
         log=open('/home/pi/record/log.txt','a')
         log.write(logoutput)
         log.close()
