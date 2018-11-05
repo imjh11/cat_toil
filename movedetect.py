@@ -36,11 +36,11 @@ def detectmove (ToF):
         distance=pulse_du*17000
         distance=round(distance, 2) #get actual distance from travle time of ultrasonic
         print (distance)
-        if len(listfordis)==3:
+        if len(listfordis)==7:
             listfordis.pop(0)
             listfordis.append(distance) # add new value to list and remove old one
             avg=sum(listfordis)/3  # get average value for compare 
-            if avg>=min(listfordis)+10 or avg<=max(listfordis)-10: #notice as movement if distance difference is bigger than 10 cm 
+            if avg>=min(listfordis)+10 or avg<=max(listfordis)-10: 
                 ismoving=True # there is a movement if min value is too small or max value is too big
             else :
                 ismoving=False 
