@@ -40,7 +40,7 @@ def detectmove (ToF):
             listfordis.pop(0)
             listfordis.append(distance) # add new value to list and remove old one
             avg=sum(listfordis)/3  # get average value for compare 
-            if avg>=min(listfordis)+10 or avg<=max(listfordis)-10: 
+            if avg>=min(listfordis)+20 or avg<=max(listfordis)-20: 
                 ismoving=True # there is a movement if min value is too small or max value is too big
             else :
                 ismoving=False 
