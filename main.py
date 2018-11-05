@@ -24,6 +24,6 @@ with picamera.PiCamera() as camera:
             logoutput=starttime + ' ' + endtime + ' ' + str(length) + ' seconds ' + 'Warning!'+ '\n' + '\n'
         else:
             logoutput=starttime + ' ' + endtime + ' ' + str(length) + ' seconds' + '\n' + '\n'    
-        log=open('/home/pi/record/log.txt','a')
+        log=open('/var/lib/tomcat8/webapps/ROOT/log.txt','a')
         log.write(logoutput)
         log.close()
