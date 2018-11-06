@@ -14,31 +14,17 @@
 </head>
 <body>
  <%
- BufferedReader reader = null;
- try
-  {
-   String filePath = application.getRealPath("log.txt"); 
-   reader = new BufferedReader(new FileReader(filePath));
-   while(true)
-   {
-   String str = reader.readLine();  
-   if(str==null)
-    break;
-   out.print(str+"</br>");    
-   }
-  }
- 
- finally
- {
-  try 
-  {
+    BufferedReader reader = null;
+    String filePath = application.getRealPath("log.txt"); 
+    reader = new BufferedReader(new FileReader(filePath));
+    while(true)
+    {
+        String str = reader.readLine();  
+        if(str==null)
+        break;
+        out.print(str+"</br>");    
+    }
    reader.close();    
-  }
-  catch(Exception e)
-  {
-  
-  }
- }
  %>
 </body>
 </html>
