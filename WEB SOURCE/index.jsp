@@ -13,6 +13,11 @@
 <title>Toilet log</title>
 </head>
 <body>
+        <p class="auto-style1">Toilet enter log page</p>
+        <p class="auto-style1">&nbsp;</p>
+        <p class="auto-style1">&nbsp;</p>
+        <p class="auto-style1">&nbsp;</p>
+        <p class="auto-style1">&nbsp;</p>
  <%
     BufferedReader reader = null;
     String filePath = application.getRealPath("log.txt"); 
